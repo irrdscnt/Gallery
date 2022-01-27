@@ -1,7 +1,4 @@
-export interface IResponse{
-    status:number
-    message:string
+export interface IResponse {
+  status: number;
+  message: string;
 }
-
-
-

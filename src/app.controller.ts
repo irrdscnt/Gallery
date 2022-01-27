@@ -8,12 +8,10 @@ export class AppController {
 
   @Get('world')
   getHello(): IResponse {
-    
     return this.appService.getHello();
   }
   @Get('nest')
-  helloNest():string {
-    return this.appService.helloNest()
+  helloNest(): string {
+    return this.appService.helloNest();
   }
-
 }
