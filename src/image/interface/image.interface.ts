@@ -1,6 +1,9 @@
-export interface IImage{
-    id?:number
-    name:string
-    url:string
-    description: string
+import { Category } from '../enum/category.enum';
+
+export interface IImage {
+  id?: number;
+  name: string;
+  category: Category;
+  url: string;
+  description: string;
 }
