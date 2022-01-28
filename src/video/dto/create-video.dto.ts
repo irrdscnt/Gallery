@@ -1,16 +1,15 @@
 import { Contains, IsEnum, IsOptional, Length } from 'class-validator';
-import { Category } from '../enum';
+import { VideoCategory } from '../enum';
 
-export class UpdateImageDto {
-  @IsOptional()
+export class CreateVideoDto {
+  id?: number;
+
   @Length(2, 30)
   name: string;
 
-  @IsOptional()
-  @IsEnum(Category)
-  category: Category;
+  @IsEnum(VideoCategory)
+  category: VideoCategory;
 
-  @IsOptional()
   @Contains('https://')
   url: string;
 

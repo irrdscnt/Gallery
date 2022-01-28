@@ -1,5 +1,5 @@
 import {
-  Body, 
+  Body,
   Controller,
   Delete,
   Get,
@@ -9,26 +9,26 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-import { CreateImageDto, UpdateImageDto } from './dto';
-import { ImageService } from './image.service';
-import { IImage } from './interface';
+import { CreateVideoDto, UpdateVideoDto } from './dto';
+import { IVideo } from './interface';
+import { VideoService } from './video.service';
 
-@Controller('image')
-export class ImageController {
-  constructor(private readonly service: ImageService) {}
+@Controller('video')
+export class VideoController {
+  constructor(private readonly service: VideoService) {}
 
   @Get()
-  async findAll(): Promise<IImage[]> {
+  async findAll(): Promise<IVideo[]> {
     return await this.service.findAll();
   }
-  
+
   @Get(':id')
-  async findOne(@Param('id') id: number): Promise<IImage> {
+  async findOne(@Param('id') id: number): Promise<IVideo> {
     return await this.service.findOne(+id);
   }
 
   @Post()
-  async create(@Body() dto: CreateImageDto): Promise<IImage> {
+  async create(@Body() dto: CreateVideoDto): Promise<IVideo> {
     return await this.service.create(dto);
   }
 
@@ -39,7 +39,7 @@ export class ImageController {
   }
 
   @Put(':id')
-  async edit(@Param('id') id: number, @Body() dto: UpdateImageDto) {
+  async edit(@Param('id') id: number, @Body() dto: UpdateVideoDto) {
     return await this.service.update(+id, dto);
   }
 }
